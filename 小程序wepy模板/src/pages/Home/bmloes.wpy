@@ -1,0 +1,47 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="bmloes">
+    兄弟传值
+    <view>{{bbmm}}</view>
+    轮播
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+    
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class bmloes extends wepy.page {
+    config = {
+      navigationBarTitleText: ''
+    }
+    data = {
+      bbmm: "",
+      imgUrls: [
+        'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+        'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+        'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+      ],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000
+    }
+    props = {
+      title: String
+    }
+    methods = {}
+  
+    onLoad() {
+      console.log(this)
+    }
+  }
+</script>

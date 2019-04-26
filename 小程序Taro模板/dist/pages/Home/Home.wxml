@@ -1,0 +1,19 @@
+<block>
+    <view class="Home">
+        <view class="Home_nav">
+            <at-avatar circle="{{true}}" __triggerObserer="{{ _triggerObserer }}" text="{{city}}" className="HomeImg" image="{{url}}"></at-avatar>
+            <view>{{city}}</view>
+        </view>
+        <block>
+            <block wx:if="{{city != ''}}">
+                <at-button size="small" __triggerObserer="{{ _triggerObserer }}" className="errorbtn" bindonclick="logout" __fn_onClick="{{true}}">退出登录</at-button>
+            </block>
+            <block wx:else>
+                <at-button className="errorbtns" __triggerObserer="{{ _triggerObserer }}" bindonclick="login" __fn_onClick="{{true}}">登录</at-button>
+            </block>
+        </block>
+        <view class="logout-model">
+            <at-modal isOpened="{{isOpened}}" __triggerObserer="{{ _triggerObserer }}" title="确定退出？" cancelText="取消" confirmText="确认" bindoncancel="handleCancel" bindonconfirm="handleConfirm" content="您确定要退出嘛？" __fn_onCancel="{{true}}" __fn_onConfirm="{{true}}"></at-modal>
+        </view>
+    </view>
+</block>

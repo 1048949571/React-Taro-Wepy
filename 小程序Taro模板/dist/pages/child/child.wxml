@@ -1,0 +1,59 @@
+<block>
+    <view class="Child">
+        <ul __triggerObserer="{{ _triggerObserer }}">
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+            <li __triggerObserer="{{ _triggerObserer }}">大神</li>
+        </ul>
+        <block wx:if="{{showx == true}}">
+            <view>下拉加载</view>
+        </block>
+    </view>
+</block>

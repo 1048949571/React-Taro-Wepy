@@ -1,0 +1,12 @@
+<block>
+    <view class="index">
+        <view class="Nav" __triggerObserer="{{ _triggerObserer }}">
+            <ul __triggerObserer="{{ _triggerObserer }}">
+                <li wx:key="i" __triggerObserer="{{ _triggerObserer }}" wx:for="{{dataIndex}}" wx:for-item="v" wx:for-index="i">{{v.name}}</li>
+            </ul>
+        </view>Child
+        <at-curtain isOpened="{{isOpened}}" __triggerObserer="{{ _triggerObserer }}" bindonclose="onClose" __fn_onClose="{{true}}" data-e-onclose-so="this">
+            <image style="width:100%;height:250px; border-radius: 50%" src="https://img.alicdn.com/tfs/TB1wUEoO4TpK1RjSZFMXXbG_VXa-520-280.jpg"></image>
+        </at-curtain>
+    </view>
+</block>

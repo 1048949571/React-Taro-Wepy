@@ -1,0 +1,31 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="child">
+    子给父传值
+    <view @tap="tap">Click me</view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class child extends wepy.page {
+    config = {
+      navigationBarTitleText: ''
+    }
+    data = {}
+    props = {
+      title: String
+    }
+    methods = {
+      tap() {
+        console.log('child is clicked')
+        this.$emit('childFn', 100)
+      }
+    }
+    onLoad() {
+      console.log(this.$parent.$data.list)
+    }
+  }
+</script>

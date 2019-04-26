@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "at-avatar": "../../npm/taro-ui/dist/weapp/components/avatar/index",
+    "at-button": "../../npm/taro-ui/dist/weapp/components/button/index",
+    "at-modal": "../../npm/taro-ui/dist/weapp/components/modal/index"
+  },
+  "navigationBarTitleText": "个人中心"
+}

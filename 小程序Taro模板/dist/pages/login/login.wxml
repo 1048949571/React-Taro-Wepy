@@ -1,0 +1,5 @@
+<block>
+    <view class="Login">
+        <button open-type="getUserInfo" class="loginbtn" bindgetuserinfo="getUserInfo">微信授权</button>
+    </view>
+</block>

@@ -1,0 +1,125 @@
+<style lang="less">
+    .Home {
+        font-size: 36rpx;
+    }
+    .navigator-hover {
+        color: blue;
+    }
+    /** 自定义其他点击态样式类 **/
+    .other-navigator-hover {
+        color: red;
+    }
+    .Inputs {
+        width: 99%;
+        height: 20rpx;
+        border: 1px solid #ccc;
+    }
+</style>
+<template>
+    <view class="Home">
+        <repeat for="{{list}}" key="index" index="index" item="item">
+            <text>{{item.title}}</text>
+        </repeat>
+        <text>{{childvalue}}</text>
+        <child @childFn.user="parentFn" :item="list"></child>
+        <text>{{SXVlue}}</text>
+        <input class="Inputs" placeholder='请输入用户名' type="text" bindinput="InputChange" value="{{SXVlue}}">
+        <block wx:if="{{recordList.length > pageSize}}">
+            <block wx:if="{{updateLoadShow}}">
+                <!-- <updateLoad :loading="updateLoadShow"></updateLoad> -->
+            </block>
+            <view class="doc-description zan-center" style="font-size:12px;" wx:else>
+                <text>{{updateLoadTxt}}</text>
+            </view>
+        </block>
+        <bmlose></bmlose>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import child from './child'
+    import axios from '../../api/api'
+    import bmlose from './bmloes'
+    export default class Home extends wepy.page {
+        config = {
+            navigationBarTitleText: '家',
+            enablePullDownRefresh: true
+        }
+        components = {
+            child,
+            bmlose
+        }
+        data = {
+            list: [{
+                id: 1,
+                title: 'title1'
+            }, {
+                id: 2,
+                title: 'title2'
+            }],
+            childvalue: 2,
+            SXVlue: "",
+            height: 0,
+            pageSize: 0,
+            updateLoadShow: false,
+            recordList: [],
+            updateLoadTxt: "",
+            pagtotal: 0,
+            pageNum: 0
+        }
+        methods = {
+            parentFn(num, evt) { //接收子组件传来的值
+                this.childvalue = num
+                console.log(num)
+                console.log(axios)
+            },
+            InputChange(e) { //双向绑定
+                this.SXVlue = e.detail.value
+                console.log(e.detail.value)
+            }
+        }
+        onPullDownRefresh(e) {
+            console.log('--------下拉刷新-------')
+            // wx.showNavigationBarLoading() //在标题栏中显示加载
+            //wx.startPullDownRefresh()
+            // axios.post({
+            //     name: '李靖',
+            //     age: '25'
+            // }).then(res => {
+            //     console.log(res)
+            // }).complete(res => {
+            //     // complete
+            //     console.log(res)
+            //     //wx.stopPullDownRefresh() //停止下拉刷新
+            // })
+        }
+        onReachBottom() {
+            // 上拉加载更多loading
+            this.updateLoadShow = true
+            let _length = this.recordList.length
+            // 列表长度与列表总数对比
+            if (_length === this.pagtotal) {
+                setTimeout(() => {
+                    this.updateLoadShow = false
+                    this.$apply()
+                }, 1000)
+            } else {
+                // 当前页码加一
+                this.pageNum++
+                    // 更新数据
+                    console.log(1)
+            }
+        }
+        onLoad() {
+            wepy.getSystemInfo({
+                success: (res) => {
+                    this.height = res.windowHeight
+                    this.pageSize = Math.round(res.windowHeight / 103) + 1
+                    console.log(res)
+                    this.$apply()
+                }
+            })
+        }
+    }
+</script>

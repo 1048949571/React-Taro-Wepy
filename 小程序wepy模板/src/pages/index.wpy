@@ -1,0 +1,107 @@
+<style lang="less">
+  .container {
+    font-size: 20rpx;
+  }
+  .Nav{
+    width: 100%;
+    ul{
+      width: 100%;
+      display: inline-block;
+      li{
+        font-size: 32rpx;
+        width: 25%;
+        display: inline-block;
+         word-wrap: break-word; 
+         word-break: normal;
+      }
+      .Nav_liTEXT{
+        display: none;
+      }
+      li:hover{
+          background: red;
+          .Nav_liTEXT{
+            display: block;
+          }
+      }
+    }  
+  }
+</style>
+
+<template>
+  <view class="container">
+    <button @tap="tabBtn">提交</button>
+    <button @tap="AxiosX">GET请求</button>
+    <button @tap="Axios_POST">POST请求</button>
+    <button @tap="phone">打电话</button>
+    <view class="Nav">
+        <ul>
+          <li>1 <text class="Nav_liTEXT">*-*</text> </li>
+          <li>2<text class="Nav_liTEXT">*-*</text></li>
+          <li>3<text class="Nav_liTEXT">*-*</text></li>
+          <li>4<text class="Nav_liTEXT">*-*</text></li>
+          <li>5<text class="Nav_liTEXT">*-*</text></li>
+          <li>6<text class="Nav_liTEXT">*-*</text></li>
+        </ul>
+    </view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import axios from '../api/api.js'
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '首页'
+    }
+    data = {}
+    methods = {
+      tabBtn() {
+        console.log(1)
+      },
+      AxiosX() {
+        axios.get({}).then(res => {
+          console.log(res)
+        })
+      },
+      Axios_POST() {
+        axios.post({
+          name: '李靖',
+          age: '25'
+        }).then(res => {
+          console.log(res)
+        })
+        // wx.scanCode({
+        //   onlyFromCamera: true,
+        //   success(res) {
+        //     console.log(res)
+        //   }
+        // })
+      },
+      phone() {
+        wx.makePhoneCall({
+          phoneNumber: '15710073704'
+        })
+      }
+    }
+    onLoad() {
+      wx.login({
+        success(res) {
+          console.log(res)
+          if (res.code) {
+            console.log(res)
+            // 发起网络请求
+            // wx.request({
+            //   url: 'https://test.com/onLogin',
+            //   data: {
+            //     code: res.code
+            //   }
+            // })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      })
+    }
+  }
+</script>
